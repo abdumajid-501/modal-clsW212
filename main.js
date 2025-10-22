@@ -3,7 +3,6 @@ const modalEl = document.getElementById("modal");
 const closeBtn = document.getElementById("close-btn");
 const overlayEl = document.getElementById("overlay");
 
-
 const addHidden = () => {
   modalEl.classList.add("hidden");
   overlayEl.classList.add("hidden");
@@ -23,9 +22,7 @@ overlayEl.addEventListener("click", () => {
 });
 
 document.addEventListener("keydown", (e) => {
-  if (e.key == "Escape") {
+  if (e.key === "Escape") {
     addHidden();
   }
 });
-
-console,console.log(Salom);

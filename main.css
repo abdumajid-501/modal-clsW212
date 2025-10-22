@@ -1,5 +1,7 @@
-@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap);
+/* GOOGLE FONT */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap");
 
+/* RESET STYLES */
 * {
   margin: 0;
   padding: 0;
@@ -7,16 +9,20 @@
 }
 
 ol, ul {
-    list-style: none;
+  list-style: none;
 }
+
 body {
+  font-family: "Poppins", sans-serif;
   background: url(./bgIMG.jpg);
   height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  overflow: hidden;
 }
 
+/* CONTAINER */
 .container {
   display: flex;
   justify-content: center;
@@ -24,65 +30,81 @@ body {
   height: inherit;
 }
 
-.hidden {
-  display: none;
-}
-
+/* BUTTONS */
 .btn {
-  border: 0;
+  border: none;
   background: transparent;
   font-family: inherit;
   font-size: 20px;
-  color: #fff;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .show-BTN {
-  border: none;
-  padding: 12px 24px;
+  background: linear-gradient(90deg, #004d98, #a50044);
+  color: #fff;
+  padding: 14px 26px;
   border-radius: 12px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: 0.3s;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.show-btn:hover {
+.show-BTN:hover {
   transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
+/* MODAL */
 .modal {
   position: fixed;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.8);
   max-width: 600px;
   width: 90%;
   background-color: #f4f4f4;
-  padding: 15px;
+  padding: 20px;
   border-radius: 12px;
   z-index: 100;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   max-height: 85vh;
   overflow: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
 }
 
+/* MODAL ACTIVE HOLATI */
+.modal:not(.hidden) {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* MODAL HEADER */
 .modal-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
+}
+
+.modal-header h3 {
+  color: #222;
 }
 
 .close-btn {
   color: #222;
-  font-size: 20px;
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-.modal-title {
-  margin-bottom: 15px;
+.close-btn:hover {
+  color: #a50044;
+  transform: scale(1.2);
 }
 
-.modal-info {
+/* MODAL BODY */
+.modal-main {
   line-height: 1.6;
   font-size: 15px;
   text-align: justify;
@@ -97,8 +119,7 @@ body {
   scrollbar-color: #004d98 #ddd;
 }
 
-/* overlay */
-
+/* OVERLAY */
 .overlay {
   position: fixed;
   top: 0;
@@ -106,8 +127,20 @@ body {
   bottom: 0;
   width: 100%;
   background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
-  display: none;
+  backdrop-filter: blur(5px);
+  z-index: 50;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
+/* OVERLAY AKTIV HOLAT */
+.overlay:not(.hidden) {
+  opacity: 1;
+  pointer-events: all;
+}
 
+/* HIDDEN CLASS */
+.hidden {
+  display: none;
+}
