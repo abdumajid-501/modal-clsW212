@@ -99,8 +99,8 @@ body {
 }
 
 .close-btn:hover {
-  color: #a50044;
-  transform: scale(1.2);
+  color: #202bff;
+  transform: scale(1.5);
 }
 
 /* MODAL BODY */
