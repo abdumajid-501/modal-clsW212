@@ -27,3 +27,5 @@ document.addEventListener("keydown", (e) => {
     addHidden();
   }
 });
+
+console,console.log(Salom);
