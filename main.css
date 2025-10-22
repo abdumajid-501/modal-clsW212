@@ -41,7 +41,7 @@ body {
 }
 
 .show-BTN {
-  background: linear-gradient(90deg, #004d98, #a50044);
+  background: linear-gradient(90deg, #637a36, #310014);
   color: #fff;
   padding: 14px 26px;
   border-radius: 12px;
@@ -108,11 +108,9 @@ body {
   line-height: 1.6;
   font-size: 15px;
   text-align: justify;
-  height: 55vh;
+  height: auto;
   overflow-y: auto;
   padding: 16px 20px;
-  border-left: 3px solid #a50044;
-  border-right: 3px solid #004d98;
   background: #fff;
   border-radius: 6px;
   scrollbar-width: thin;
